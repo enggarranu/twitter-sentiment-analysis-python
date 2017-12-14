@@ -30,6 +30,7 @@ class TweeterStreamListener(tweepy.StreamListener):
         return True
 
     def on_error(self, status_code):
+        print status_code
         print("Error received in kafka producer")
         return True # Don't kill the stream
 
@@ -56,4 +57,4 @@ if __name__ == '__main__':
 
     #Custom Filter rules pull all traffic for those filters in real time.
     #stream.filter(track = ['love', 'hate'], languages = ['en'])
-    stream.filter(locations=[-180,-90,180,90], languages = ['en'])
+    stream.filter(locations=[-180,-90,180,90], languages = ['en','id'])

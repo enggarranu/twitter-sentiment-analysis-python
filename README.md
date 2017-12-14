@@ -27,8 +27,11 @@ Download and extract the latest binary from https://kafka.apache.org/downloads.h
  
 #####Create a topic named twitterstream in kafka: 
 `$ bin/kafka-topics.sh --create --zookeeper --partitions 1 --topic twitterstream localhost:2181 --replication-factor 1`
+`$ bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic twitterstream`
 
- 
+#####We can now see that topic if we run the list topic command: 
+`$ bin/kafka-topics.sh --list --zookeeper localhost:2181`
+
 ####Using the Twitter Streaming API 
 In order to download the tweets from twitter streaming API and push them to kafka queue, I have created a python script
 app.py. The script will need your twitter authentication tokens (keys).
